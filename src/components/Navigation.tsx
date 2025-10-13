@@ -1,8 +1,14 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Gamepad2 } from "lucide-react";
+import LoginDialog from "./LoginDialog";
 
 const Navigation = () => {
+  const [loginOpen, setLoginOpen] = useState(false);
+
   return (
+    <>
+      <LoginDialog open={loginOpen} onOpenChange={setLoginOpen} />
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
@@ -31,12 +37,17 @@ const Navigation = () => {
             </a>
           </div>
           
-          <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+          <Button 
+            variant="outline" 
+            className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+            onClick={() => setLoginOpen(true)}
+          >
             Login
           </Button>
         </div>
       </nav>
     </header>
+    </>
   );
 };
 
