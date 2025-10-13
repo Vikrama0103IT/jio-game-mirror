@@ -52,9 +52,45 @@ const trendingGames = [
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background scroll-smooth">
       <Navigation />
       <HeroCarousel />
+      
+      <section id="cloud" className="py-20 container mx-auto px-6">
+        <div className="mb-12 animate-fade-in">
+          <h2 className="text-4xl font-bold mb-4 text-foreground">
+            Cloud Gaming
+          </h2>
+          <p className="text-muted-foreground text-lg">
+            Play AAA games instantly without downloads. Stream high-quality games directly to any device.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
+          {trendingGames.slice(0, 3).map((game, index) => (
+            <div key={game.id} style={{ animationDelay: `${index * 0.1}s` }}>
+              <GameCard {...game} />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="instant" className="py-20 container mx-auto px-6 bg-muted/30">
+        <div className="mb-12 animate-fade-in">
+          <h2 className="text-4xl font-bold mb-4 text-foreground">
+            Instant Play
+          </h2>
+          <p className="text-muted-foreground text-lg">
+            No installation required. Click and play instantly in your browser.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
+          {trendingGames.slice(3, 6).map((game, index) => (
+            <div key={game.id} style={{ animationDelay: `${index * 0.1}s` }}>
+              <GameCard {...game} />
+            </div>
+          ))}
+        </div>
+      </section>
       
       <section id="trending" className="py-20 container mx-auto px-6">
         <div className="mb-12 animate-fade-in">
@@ -72,6 +108,42 @@ const Index = () => {
               key={game.id}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
+              <GameCard {...game} />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="compete" className="py-20 container mx-auto px-6 bg-muted/30">
+        <div className="mb-12 animate-fade-in">
+          <h2 className="text-4xl font-bold mb-4 text-foreground">
+            Compete & Win
+          </h2>
+          <p className="text-muted-foreground text-lg">
+            Join tournaments and compete with players worldwide for exciting prizes.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
+          {trendingGames.slice(0, 3).map((game, index) => (
+            <div key={`compete-${game.id}`} style={{ animationDelay: `${index * 0.1}s` }}>
+              <GameCard {...game} />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="store" className="py-20 container mx-auto px-6">
+        <div className="mb-12 animate-fade-in">
+          <h2 className="text-4xl font-bold mb-4 text-foreground">
+            Game Store
+          </h2>
+          <p className="text-muted-foreground text-lg">
+            Discover and access our complete library of premium games.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
+          {trendingGames.map((game, index) => (
+            <div key={`store-${game.id}`} style={{ animationDelay: `${index * 0.1}s` }}>
               <GameCard {...game} />
             </div>
           ))}
