@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import HeroCarousel from "@/components/HeroCarousel";
 import GameCard from "@/components/GameCard";
+import AdSlot from "@/components/AdSlot";
 import game1 from "@/assets/game1.jpg";
 import game2 from "@/assets/game2.jpg";
 import game3 from "@/assets/game3.jpg";
@@ -74,6 +75,16 @@ const Index = () => {
       <Navigation />
       <HeroCarousel />
       
+      {/* Top Banner Ad */}
+      <div className="container mx-auto px-6 py-4">
+        <AdSlot 
+          slot="1234567890"
+          format="horizontal"
+          className="max-w-4xl mx-auto"
+          style={{ minHeight: "90px" }}
+        />
+      </div>
+      
       <section id="cloud" className="py-20 container mx-auto px-6">
         <div className="mb-12 animate-fade-in">
           <h2 className="text-4xl font-bold mb-4 text-foreground">
@@ -91,6 +102,16 @@ const Index = () => {
           ))}
         </div>
       </section>
+
+      {/* Mid-page Ad */}
+      <div className="container mx-auto px-6 py-6">
+        <AdSlot 
+          slot="0987654321"
+          format="rectangle"
+          className="max-w-sm mx-auto"
+          style={{ minHeight: "250px" }}
+        />
+      </div>
 
       <section id="instant" className="py-20 container mx-auto px-6 bg-muted/30">
         <div className="mb-12 animate-fade-in">
@@ -167,6 +188,16 @@ const Index = () => {
           ))}
         </div>
       </section>
+
+      {/* Footer Ad */}
+      <div className="container mx-auto px-6 py-6">
+        <AdSlot 
+          slot="1357924680"
+          format="horizontal"
+          className="max-w-4xl mx-auto"
+          style={{ minHeight: "90px" }}
+        />
+      </div>
 
       <footer className="py-12 border-t border-border">
         <div className="container mx-auto px-6">
